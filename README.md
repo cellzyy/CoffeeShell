@@ -1,4 +1,4 @@
-![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/5c7172bf-5e19-43bb-8194-49dc9c4ec395)
+![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
 DEPLOY NOW WITH REPLIT. EXPERIENCE TEST 1.0
 # Development Logs
 ## Feburary 15th (1:20 AM)
