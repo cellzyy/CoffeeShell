@@ -1,27 +1,23 @@
-# kodakOS@lemon/1.0
+# kodakOS@lemon/1.0-patch
 # uarcell@proton.me
 
 prompt = require 'prompt'
 request = require 'request'
 localStorage = require 'localStorage'
-sm = 'this__Software__LEMON1.0'
+sm = 'this__Software__LEMON1.0-patch'
 smURL = 'https://raw.githubusercontent.com/Celluarbyte/kodakOS/main/KodakSoftwareUpdate.txt'
 
 version = () ->
-  console.log 'kodakOS [Lemon] / 1.0.0 software (GH: Celluarbyte)'
+  console.log 'kodakOS [Lemon] / 1.0 software (GH: Celluarbyte) [1.0 PATCH]'
   os()
 
-upgrade = (force) ->
+upgrade = () ->
   request.get smURL, (error, response, body) ->
     if !error && response.statusCode == 200
       if body.trim( ) == sm
         console.log 'kodakOS is updated.'
       else
         console.log 'Get new kodakOS version on GitHub.'
-        if force
-          console.log 'Nevermind, forcing you to the GitHub page right now.'
-          window.open("https://www.github.com/Celluarbyte/kodakOS", "_blank")
-          console.log 'Completed Task'
     else
       console.log 'Failed to Connect to Internet.'
   os()
@@ -48,13 +44,21 @@ su_setup = () ->
 
 get = (http) ->
   request.get http, (error, response, body) ->
-    console.log 'Submitted GET'
-    console.log body
+    if !error
+      console.log response
+      os()
+    else
+      console.log 'Couldn\'t send out GET request.'
+      os()
 
 post = (http, jsona) ->
   request.post http, { json: jsona }, (error, response, body) ->
-    console.log 'Submitted POST'
-    console.log body
+    if !error
+      console.log response
+      os()
+    else
+      console.log 'Couldn\'t send out POST request JSON.'
+      os()
 
 su_get = () ->
   prompt.get ['user', 'pass', 'url'], (err, result) ->
@@ -95,10 +99,8 @@ functionShell = (func) ->
   if commands[func]
     commands[func]()
   else
-    if func == 'upgrade --force'
-        upgrade(true)
-    else
-      console.log "Command '#{func}' doesn't exist"
+    console.log "Command '#{func}' doesn't exist"
+    os()
 
 os = () ->
   prompt.get ['shell'], (err, result) ->
