@@ -8,7 +8,8 @@ Yooo! Whats up? Decided to do a little bit of a devlog but I got a mockup workin
 # How?
 Using coffeescript, it's possible. When I get a computer, kodakOS will be usuable for FREE on Desktops. Maybe even a mobile app? Well, you need a CS server and I reccomend using replit for only YOUR needs. kodakOS is meant for a web-based type thing inspired by Linux by Linus. Different versions of kodakOS will be developed. During the other developments, kodakOS L will probably lose support from me.
 # Deploy
-very soon ;)
+![Run on Replit](https://replit.com/badge/github/Celluarbyte/kodakOS)
+<br>After deploying make sure to set OS.coffee to main.coffee :)
 # Contact
 uarcell@proton.me
 # WARNING
