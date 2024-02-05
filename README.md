@@ -1,6 +1,16 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/5c7172bf-5e19-43bb-8194-49dc9c4ec395)
 DEPLOY NOW WITH REPLIT. EXPERIENCE TEST 1.0
 # Development Logs
+## Feburary 15th (1:20 AM)
+I have released a PATCH to clear up the remaining bugs from the build. Here are all the fixes:<br>
+- Patched GET Request not prompting os()<br>
+- Patched POST Request not prompting os()<br>
+- Patched Invalid Command not prompting os()<br>
+- Added error support for GET<br>
+- Added error support for POST<br>
+- Removed upgrade —force (REPLIT DISABLED OPEN BRUH)<br>
+- Patched some superuser stuff I think idrm<br>
+- Removed Herobrine
 ## Feburary 15th (12:40 AM)
 Writing another one of these because I made MAJOR progress. You can now create super user, and it uses localstorage so it should NEVER clear out unless you specify in browser settings, post and get requests work with superuser priviledges and theres a help command. It takes a little less to load now thanks to some other module but it still reads the code kinda slow, basically CoffeeScript is JavaScript but easier with more MODULES! Thats right, CS can load *NODE.JS MODULES* best part about it **NGL**. I have been a working machine for the past few hours and idk when I'm gonna stop really, I might have more time to work tomorrow because someone called in a threat at my school and their deciding if they close or heavily protect the school, depends, prob won't go but education is important! 4 new commands as of now for 11:50 AM, I'm gonna release the first kodakOS lemon build, 1.0
 ## Feburary 14th (11:50 AM)
