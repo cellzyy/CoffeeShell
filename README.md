@@ -1,6 +1,8 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
 DEPLOY NOW WITH REPLIT. EXPERIENCE TEST 1.0
 # Development Logs
+## Feburary 15th (9:20 AM)
+Quick update in math class, fixed bugs two new test commands not listed in help
 ## Feburary 15th (1:20 AM)
 I have released a PATCH to clear up the remaining bugs from the build. Here are all the fixes:<br>
 - Patched GET Request not prompting os()<br>
