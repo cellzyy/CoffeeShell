@@ -4,11 +4,11 @@
 prompt = require 'prompt'
 request = require 'request'
 localStorage = require 'localStorage'
-sm = 'this__Software__LEMON1.0-patch'
+sm = 'this__Software__LEMON1.1'
 smURL = 'https://raw.githubusercontent.com/Celluarbyte/kodakOS/main/KodakSoftwareUpdate.txt'
 
 version = () ->
-  console.log 'kodakOS [Lemon] / 1.0 software (GH: Celluarbyte) [1.0 PATCH]'
+  console.log 'kodakOS [Lemon] / 1.1 software (GH: Celluarbyte)'
   os()
 
 upgrade = () ->
@@ -63,18 +63,24 @@ post = (http, jsona) ->
 su_get = () ->
   prompt.get ['user', 'pass', 'url'], (err, result) ->
    if su(result.user, result.pass)
+      console.clear()
       console.log 'Logged in.'
       get(result.url)
     else
+      console.clear()
       console.log '? invalid SU login.'
+      os()
 
 su_post = () ->
   prompt.get ['user', 'pass', 'url', 'json'], (err, result) ->
     if su(result.user, result.pass)
+      console.clear()
       console.log 'Logged in.'
       post(result.url, JSON.parse result.json)
     else
+      console.clear()
       console.log '? invalid SU login.'
+      os()
 
 help = () ->
   console.log 'Check for newest Upgrades for your OS. - upgrade'
@@ -84,6 +90,10 @@ help = () ->
   console.log 'Post request, REQUIRES SUPERUSER. [sudo post]'
   os()
 
+clear = () ->
+  console.clear()
+  os()
+
 functionShell = (func) ->
   commands = {
     'version': version,
@@ -91,16 +101,28 @@ functionShell = (func) ->
     'help': help,
     'sudo setup': su_setup,
     'sudo get': su_get,
-    'sudo post': su_post
+    'sudo post': su_post,
+    'clear': clear
   }
 
   # Hard Coded flags for now
+  # erm hardcode echo
 
   if commands[func]
     commands[func]()
   else
-    console.log "Command '#{func}' doesn't exist"
-    os()
+    if func.split " "[0] == "echo"
+      y = func.split " "
+      i = 1
+      a = ""
+      while i < y.length 
+        a = a + y[i] + " "
+        i++
+      console.log a
+      os()
+    else
+      console.log "Command '#{func}' doesn't exist"
+      os()
 
 os = () ->
   prompt.get ['shell'], (err, result) ->
