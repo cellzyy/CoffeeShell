@@ -1,6 +1,8 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
 kodakOS 2 is right around the corner.
 # kodakOS 2 Devlog
+## 4 New Commands for 2.0
+pro -- Pro License status<br>1- -- test ransomware thing (its already patched cuh removing b4 2.0 release)<br>hash -- hash random string<br>verify -- verify string and hash
 ## BCrypt Implemented
 Took 3 hours of troubleshooting and ended up stop using su() function cuz it bugged A LOT. so wasting space again :/// BUT passwords are encrypted, usernames aren't. I made an example Ransomware coffee file 5 hours ago for testing and now I patched it because of BCrypt :) hash and verify commands wip?? maybe...
 ## Anti-Virus.
