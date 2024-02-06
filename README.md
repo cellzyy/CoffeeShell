@@ -1,6 +1,11 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
-DEPLOY NOW WITH REPLIT. EXPERIENCE TEST 1.0
-# Development Logs
+kodakOS 2 is right around the corner.
+# kodakOS 2 Devlog
+## QoL and Brand changes.
+- Removed Codenames
+- Added Elevated Print (magenta text!!!) Highlight important things FINALLY.
+- Bug fixes
+# Development Logs [Outdated]
 ## Feburary 15th (9:20 AM)
 Quick update in math class, fixed bugs two new test commands not listed in help
 ## Feburary 15th (1:20 AM)
