@@ -1,6 +1,8 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
 kodakOS 2 is right around the corner.
 # kodakOS 2 Devlog
+## 2.0 release
+testing public
 ## User System
 It has been developed. For non-sudo commands with special stuff you can use one of the users.
 ## 4 New Commands for 2.0
