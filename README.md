@@ -1,6 +1,8 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
 kodakOS 2 is right around the corner.
 # kodakOS 2 Devlog
+## Anti-Virus.
+To protect from ransomware (aka running unauthorized .coffee files in the environment and potentionally getting your superuser info stolen) we are implementing BCrypt. This is one small step for kodakOS 2 but one huge leap for the security. Whenever I get to storing files, BCrypt will be the encryptor and you will need to have 1 thing to open files: the original filename. Can we become the best terminal based web os??? Hopefully..
 ## QoL and Brand changes.
 - Removed Codenames
 - Added Elevated Print (magenta text!!!) Highlight important things FINALLY.
