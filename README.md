@@ -1,5 +1,5 @@
 ![image](https://github.com/Celluarbyte/kodakOS/assets/158518863/2a151e8a-1dbc-4e83-8133-ee7ad018c3fb)
-kodakOS 2 is right around the corner.
+kodakOS 2.1 Professional, html-terminal design, same old coffeescript. Get early-access to 2.1 and get free Professional build by reporting a valid bug that hasn't been reported before. kodakOS might become uTerminal :)
 # kodakOS 2 Devlog
 ## 2.0 release
 testing public
