@@ -1,29 +1,28 @@
-# kodakOS 2.0
-# uarcell@proton.me
+## CoffeeShell v3 ##
 
 user = null
 prompt = require 'prompt'
 request = require 'request'
 localStorage = require 'localStorage'
 bcrypt = require 'bcryptjs'
-sm = 'kodakOS2'
-smURL = 'https://raw.githubusercontent.com/Celluarbyte/kodakOS/main/KodakSoftwareUpdate.txt'
+sm = 'IcedCoffee'
+smURL = 'https://raw.githubusercontent.com/mctnb/CoffeeShell/main/software'
 
 elevatedPrint = (Print) ->
   console.log "\x1b[35m#{Print}\x1b[0m"
 
 version = () ->
-  console.log 'kodakOS 2 {1ST REVISION}'
+  console.log 'CoffeeShell v3'
 
 upgrade = () ->
   request.get smURL, (error, response, body) ->
     if !error && response.statusCode == 200
       if body.trim( ) == sm
-        console.log 'kodakOS is updated.'
+        console.log '☕️ Updated!'
       else
-        elevatedPrint 'Get new kodakOS version on GitHub.'
+        elevatedPrint 'The coffee spilled. Please upgrade CoffeeShell.'
     else
-      elevatedPrint 'Failed to Connect to Internet.'
+      elevatedPrint 'Internet Connection Failed!'
 
 su = (user, pass) ->
   storedUser = localStorage.getItem('su_user')
@@ -50,29 +49,29 @@ su_setup = () ->
       localStorage.setItem('SUDO__SETTED', true)
       console.clear()
       elevatedPrint 'Superuser has been created and saved. You can no longer make or modify these details regulary in the OS unless some Third-Party terms.'
-      os()
+  
   else
     console.clear()
     elevatedPrint 'Superuser already been setup.'
-    os()
+    
 
 get = (http) ->
   request.get http, (error, response, body) ->
     if !error
       console.log response
-      os()
+      
     else
       console.log 'Couldn\'t send out GET request.'
-      os()
+      
 
 post = (http, jsona) ->
   request.post http, { json: jsona }, (error, response, body) ->
     if !error
       console.log response
-      os()
+      
     else
       console.log 'Couldn\'t send out POST request JSON.'
-      os()
+      
 
 su_get = () ->
   prompt.get ['user', 'pass', 'url'], (err, result) ->
@@ -88,11 +87,11 @@ su_get = () ->
         else
           console.clear()
           elevatedPrint '? invalid SU login.'
-          os()
+          
     else
       console.clear()
       elevatedPrint '? invalid SU login.'
-      os()
+    
 
 su_post = () ->
   prompt.get ['user', 'pass', 'url', 'json'], (err, result) ->
@@ -108,11 +107,10 @@ su_post = () ->
         else
           console.clear()
           elevatedPrint '? invalid SU login.'
-          os()
+        
     else
       console.clear()
       elevatedPrint '? invalid SU login.'
-      os()
 
 help = () ->
   console.log 'Check for newest Upgrades for your OS. - upgrade'
@@ -124,20 +122,16 @@ help = () ->
   console.log 'Check Pro License - pro'
   console.log "User permissions - user login, user create, user logout"
   console.log "hash strings and verify - hash, verify"
-  os()
+  console.log "Thanks message - support"
 
 clear = () ->
   console.clear()
-  os()
 
 pro = () ->
-  elevatedPrint "
-kodakOS Professional is already registered. Please note that all Replit instances get kodakOS Professional even though it does nothing atm, soon kodakOS Pro will be seperate from replit, and will need a license key to run. This is because replit is kinda no longer free :( Thanks for support kodakOS development.\nLICENSE KEY: 00000-00000-00000-00000\nPLAN: LIFETIME\nMETHOD: GITHUB SPONSOR\nREGISTAR: Celluarbyte\nREGISTERED: Feburary 5th, 2024
-  "
-  os()
+  elevatedPrint "Pro is already activated?"
 
 ransomware = () ->
-  elevatedPrint "Ransomware Demo [kodakOS 2] // Just a demo, don't worry files still save. [this is so I can develope antivirus soon]"
+  elevatedPrint "This is deprecated, in 2.1 this was unsupported."
   elevatedPrint "STEALING USERNAME [sudo]"
   user = localStorage.getItem("su_user")
   elevatedPrint "Hello, #{user}"
@@ -148,19 +142,19 @@ ransomware = () ->
   elevatedPrint "Your information has been stolen, thanks! ;) We <3 private information!"
   elevatedPrint "Ransomware Demo end. We are making it harder to steal information atm."
   elevatedPrint "As of BCrypt implementation, no longer need to worry :)"
-  os()
+  
 
 hash_CMD = () ->
   prompt.get ['string'], (err, result) ->
     bcrypt.hash result.string, 10, (err, hash) ->
       console.log hash
-      os()
+      
 
 verify_CMD = () ->
   prompt.get ['string', 'hash'], (err, result) ->
     bcrypt.compare result.string, result.hash, (err, res) ->
       console.log res
-      os()
+      
 
 newUser = () ->
   prompt.get ["Username", "Password"], (err, result) ->
@@ -168,10 +162,10 @@ newUser = () ->
       bcrypt.hash result.Password, 10, (err, hash) ->
         localStorage.setItem(result.Username, hash)
         elevatedPrint "User created."
-        os()
+      
     else
       elevatedPrint "Sorry, this user already exists."
-      os()
+    
 
 userLogin = () ->
   prompt.get ["user", "login"], (err, result) ->
@@ -184,20 +178,23 @@ userLogin = () ->
           os()
         else
           elevatedPrint "Failed Login"
-          os()
+          
     else
       elevatedPrint "Failed Login"
-      os()
+      
 
 logout = () ->
   if !user
     elevatedPrint "No user logged in."
-    os()
+    
   else
     user = null
     elevatedPrint "Logged out"
-    os()
+    
 
+support = () ->
+  elevatedPrint "Thanks for supporting by using CoffeeShell. ☕️🖱️"
+    
 functionShell = (func) ->
   commands = {
     'version': version,
@@ -208,12 +205,13 @@ functionShell = (func) ->
     'sudo post': su_post,
     'clear': clear,
     'pro': pro,
-    '1-': ransomware,
+    'Deprecated.virus.test()': ransomware,
     'hash': hash_CMD,
     'verify': verify_CMD,
     'user create': newUser,
     'user login': userLogin,
-    'user logout': logout
+    'user logout': logout,
+    'support': support
   }
 
   # Hard Coded flags for now
@@ -223,11 +221,12 @@ functionShell = (func) ->
     commands[func]()
   else
     elevatedPrint "Command '#{func}' doesn't exist"
-    os()
+    
 
 os = () ->
   prompt.get ['shell'], (err, result) ->
     functionShell(result?.shell?.trim())
+    os()
 
-elevatedPrint 'kodakOS Terminal OS // For help: help. // 2024 Celluarbyte'
+elevatedPrint 'CoffeeShell @ 2023-2024 // CellDev (MCTNB)'
 os()
